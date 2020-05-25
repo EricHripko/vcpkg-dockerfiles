@@ -1,5 +1,5 @@
 # escape=`
-FROM mcr.microsoft.com/powershell:lts-windowsservercore-1903
+FROM mcr.microsoft.com/powershell:lts-windowsservercore-1809
 SHELL ["powershell", "-Command"]
 
 # System dependencies
