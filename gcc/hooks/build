@@ -1,0 +1,8 @@
+#!/bin/bash
+for GCC_VERSION in 7 9; do
+  echo "=> Building GCC $GCC_VERSION"
+  docker build \
+    --build-arg GCC_VERSION=$GCC_VERSION \
+    -f $DOCKERFILE_PATH -t $IMAGE_NAME$GCC_VERSION .
+done
+
