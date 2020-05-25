@@ -16,8 +16,8 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Install vcpkg
-ENV CC=/usr/bin/clang \
-    CXX=/usr/bin/clang++ \
+ENV CC=/usr/bin/clang-${CLANG_VERSION} \
+    CXX=/usr/bin/clang++-${CLANG_VERSION} \
     VCPKG_PATH=/opt/vcpkg/bin
 ENV PATH=$PATH:$VCPKG_PATH
 RUN mkdir -p $VCPKG_PATH && \

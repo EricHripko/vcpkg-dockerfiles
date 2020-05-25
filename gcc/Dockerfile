@@ -1,4 +1,4 @@
-FROM ubuntu:20.04 as base
+FROM ubuntu:20.04
 
 # System dependencies
 ARG GCC_VERSION=9
