@@ -1,0 +1,6 @@
+#!/bin/bash
+for CLANG_VERSION in 7 8 9; do
+  echo "=> Pushing Clang $CLANG_VERSION"
+  docker push $IMAGE_NAME$CLANG_VERSION
+done
+

@@ -1,0 +1,8 @@
+#!/bin/bash
+for CLANG_VERSION in 7 8 9; do
+  echo "=> Building Clang $CLANG_VERSION"
+  docker build \
+    --build-arg CLANG_VERSION=$CLANG_VERSION \
+    -f $DOCKERFILE_PATH -t $IMAGE_NAME$CLANG_VERSION .
+done
+
