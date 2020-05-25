@@ -1,0 +1,15 @@
+version: 1.0.{build}
+image: Visual Studio 2019
+
+environment:
+  DOCKER_USER:
+    secure: uFAVzoWm1yt2ZPQaiZkyQQ==
+  DOCKER_PASS:
+    secure: qvZzR3qh065BS5lwbxXGYhTKfQyZaNA52iO+X6Pz1zPDASf2ffUa2naIPNeoFLSs
+
+build_script:
+  - docker build -t hripko/vcpkg:vs19 vs
+
+deploy_script:
+  - docker login -u="$env:DOCKER_USER" -p="$env:DOCKER_PASS"
+  - docker push hripko/vcpkg:vs19
