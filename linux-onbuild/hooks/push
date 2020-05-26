@@ -1,0 +1,6 @@
+#!/bin/bash
+for FLAVOUR in gcc7 gcc8 gcc9 clang7 clang8 clang9; do
+  echo "=> Pushing flavour $FLAVOUR"
+  docker push $IMAGE_NAME-$FLAVOUR
+done
+

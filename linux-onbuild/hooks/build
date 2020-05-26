@@ -1,0 +1,8 @@
+#!/bin/bash
+for FLAVOUR in gcc7 gcc8 gcc9 clang7 clang8 clang9; do
+  echo "=> Building flavour $FLAVOUR"
+  docker build \
+    --build-arg BASE=hripko/vcpkg:$FLAVOUR \
+    -f $DOCKERFILE_PATH -t $IMAGE_NAME-$FLAVOUR .
+done
+
